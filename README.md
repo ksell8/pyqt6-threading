@@ -147,3 +147,5 @@ python 3_worker_object_app.py    # GOOD: counter keeps going (worker + moveToThr
 
 All three apps *look* identical. The only difference is what thread the
 3-second `sleep()` runs on — which is the whole point of this tutorial.
+
+All of these examples create a new Thread per execution.  This can cause issues if you need to run multiple processes at once.  If you keep the button enabled and click it while your currently running thread is running, your application will fault.  QThreadPool manages a pool of threads and helps resolve these issues.  See [PythonGuis](https://www.pythonguis.com/tutorials/multithreading-pyqt6-applications-qthreadpool/) for a good tutorial on QThreadPool.
